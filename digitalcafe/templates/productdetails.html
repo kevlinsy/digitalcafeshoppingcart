@@ -1,0 +1,28 @@
+<html>
+    <header>
+    </header>
+    <body>
+        <p/>
+        {% include "header.html" %}
+        <h1>Product Details</h1>
+        <table>
+            <tr><td>Code</td><td>{{product["code"]}}</td></tr>
+            <tr><td>Description</td><td>{{ product["name"] }}</td></tr>
+            <tr><td>Price</td><td>{{ product["price"]}}</td></tr>
+            {% if session["user"] is defined %}
+              <tr><td> Add to Cart </td></tr>
+              <tr><td colspan=2><a href="/addtocart?code={{ code }}">&nbsp;&nbsp;&nbsp;&nbsp;1</a></td></tr>
+              <tr><td colspan=2><a href="/add2tocart?code={{ code }}">&nbsp;&nbsp;&nbsp;&nbsp;2</a></td></tr>
+              <tr><td colspan=2><a href="/add3tocart?code={{ code }}">&nbsp;&nbsp;&nbsp;&nbsp;3</a></td></tr>
+              <tr><td colspan=2><a href="/add4tocart?code={{ code }}">&nbsp;&nbsp;&nbsp;&nbsp;4</a></td></tr>
+              <tr><td colspan=2><a href="/add5tocart?code={{ code }}">&nbsp;&nbsp;&nbsp;&nbsp;5</a></td></tr>
+              <tr><td colspan=2><a href="/add6tocart?code={{ code }}">&nbsp;&nbsp;&nbsp;&nbsp;6</a></td></tr>
+              <tr><td colspan=2><a href="/add7tocart?code={{ code }}">&nbsp;&nbsp;&nbsp;&nbsp;7</a></td></tr>
+              <tr><td colspan=2><a href="/add8tocart?code={{ code }}">&nbsp;&nbsp;&nbsp;&nbsp;8</a></td></tr>
+              <tr><td colspan=2><a href="/add9tocart?code={{ code }}">&nbsp;&nbsp;&nbsp;&nbsp;9</a></td></tr>
+            {% endif %}
+        </table>
+        <a href="/products">Back</a>
+        {% include "footer.html" %}
+    </body>
+</html>
